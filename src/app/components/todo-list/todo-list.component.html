@@ -1,6 +1,11 @@
-<ul class="todo-list">
-  <li *ngFor="let item of todoList">
-    <span>{{item.text}}</span>
-    <span>{{item.addedOn | date}}</span>
-  </li>
-</ul>
+<div class="list-wrapper">
+  <ul class="todo-list" *ngIf="todoList.list.length > 0; else noListItems">
+    <li *ngFor="let item of todoList.list">
+      <span>{{item.text}}</span>
+      <span>{{item.addedOn | date}}</span>
+    </li>
+  </ul>
+  <ng-template #noListItems>
+    Add items!
+  </ng-template>
+</div>

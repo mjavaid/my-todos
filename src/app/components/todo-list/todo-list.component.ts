@@ -1,4 +1,3 @@
-import { TodoListItem } from './../../models/todo-list-item.model';
 import { TodoListService } from 'src/app/services/todo-list.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -11,15 +10,10 @@ import { Subscription } from 'rxjs';
 export class TodoListComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
-  todoList: TodoListItem[] = [];
 
-  constructor(private todoListService: TodoListService) { }
+  constructor(private todoList: TodoListService) { }
 
-  ngOnInit() {
-    this.subscription = this.todoListService.listUpdated.subscribe(newList => {
-      this.todoList = newList;
-    });
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     try {
