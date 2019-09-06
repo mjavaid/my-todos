@@ -2,7 +2,7 @@
   <ul class="todo-list" *ngIf="todoList.list.length > 0; else noListItems">
     <li *ngFor="let item of todoList.list">
       <span>{{item.text}}</span>
-      <span>{{item.addedOn | date}}</span>
+      <span>{{item.addedOn | momentFormat}}</span>
     </li>
   </ul>
   <ng-template #noListItems>

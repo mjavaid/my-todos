@@ -1,3 +1,4 @@
+import { MomentFormatPipe } from './pipes/moment-format.pipe';
 import { TodoListService } from './services/todo-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,17 +11,21 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
+    // Components
     AppComponent,
     ListItemAdderComponent,
-    TodoListComponent
+    TodoListComponent,
+
+    // Pipes
+    MomentFormatPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    TodoListService
+    TodoListService,
   ],
   bootstrap: [AppComponent]
 })
