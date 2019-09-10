@@ -1,0 +1,8 @@
+<div class="list-item-container">
+  <ng-container *ngIf="listItem; else noListItem">
+    {{listItem.text}}
+  </ng-container>
+  <ng-template #noListItem>
+    No List Item Selected
+  </ng-template>
+</div>

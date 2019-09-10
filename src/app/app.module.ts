@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListItemAdderComponent } from './components/list-item-adder/list-item-adder.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoListContainerComponent } from './components/todo-list-container/todo-list-container.component';
+import { TodoListItemContainerComponent } from './components/todo-list-item-container/todo-list-item-container.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,10 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 
     // Pipes
     MomentFormatPipe,
+
+    TodoListContainerComponent,
+
+    TodoListItemContainerComponent,
   ],
   imports: [
     BrowserModule,

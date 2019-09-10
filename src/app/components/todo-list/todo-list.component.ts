@@ -26,7 +26,8 @@ export class TodoListComponent implements OnInit, OnDestroy {
     clearInterval(this.detectionInterval);
   }
 
-  deleteItem(item: TodoListItem) {
+  deleteItem(event: any, item: TodoListItem) {
+    event.stopPropagation();
     this.todoList.removeListItem(item);
   }
 

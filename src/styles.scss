@@ -7,4 +7,10 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: steelblue;
 }

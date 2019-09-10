@@ -7,14 +7,42 @@
     justify-content: space-between;
     padding: 10px;
 
-    .item-info {
-      display: flex;
-      justify-content: space-between;
+    &:hover {
+      background: #e3ecf4;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
     }
 
-    .item-meta-info {
+    .item-info {
+      margin-bottom: 5px;
+    }
+
+    .item-meta-container {
+      display: flex;
+      justify-content: space-between;
       font-size: .7em;
-      color: dimgrey;
+      color: black;
+
+      .item-meta-info {
+        color: dimgrey;
+      }
+
+      .item-meta-controls {
+        a {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+          margin-left: 10px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 }

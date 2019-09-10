@@ -22,12 +22,16 @@ export class TodoListService {
 
   removeListItem(item: TodoListItem) {
     const indexedItems = this.todoList.list.reduce((acc, i, idx) => { acc[i.id] = idx; return acc; }, {});
-    if (indexedItems[item.id]) {
+    if (indexedItems[item.id] !== undefined) {
       this.todoList.list.splice(indexedItems[item.id], 1);
       this.saveList();
     } else {
       console.warn('DELETE ITEM :: Item not in list');
     }
+  }
+
+  getListItem(id: string) {
+    return this.todoList.list.filter(item => item.id === id)[0];
   }
 
   get list() {
