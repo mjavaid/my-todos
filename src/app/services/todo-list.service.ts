@@ -20,6 +20,16 @@ export class TodoListService {
     this.saveList();
   }
 
+  removeListItem(item: TodoListItem) {
+    const indexedItems = this.todoList.list.reduce((acc, i, idx) => { acc[i.id] = idx; return acc; }, {});
+    if (indexedItems[item.id]) {
+      this.todoList.list.splice(indexedItems[item.id], 1);
+      this.saveList();
+    } else {
+      console.warn('DELETE ITEM :: Item not in list');
+    }
+  }
+
   get list() {
     return this.todoList.list;
   }

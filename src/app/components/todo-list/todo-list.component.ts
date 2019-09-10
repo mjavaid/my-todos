@@ -1,15 +1,33 @@
+import { TodoListItem } from './../../models/todo-list-item.model';
 import { TodoListService } from 'src/app/services/todo-list.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements OnInit, OnDestroy {
 
-  constructor(private todoList: TodoListService) { }
+  private detectionInterval: any;
 
-  ngOnInit() {}
+  constructor(
+    private todoList: TodoListService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
+
+  ngOnInit() {
+    this.detectionInterval = setInterval(() => {
+      this.changeDetectorRef.markForCheck();
+    }, 15 * 1000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.detectionInterval);
+  }
+
+  deleteItem(item: TodoListItem) {
+    this.todoList.removeListItem(item);
+  }
 
 }

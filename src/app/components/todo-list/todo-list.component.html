@@ -1,8 +1,13 @@
 <div class="list-wrapper">
   <ul class="todo-list" *ngIf="todoList.list.length > 0; else noListItems">
     <li *ngFor="let item of todoList.list">
-      <span>{{item.text}}</span>
-      <span>{{item.addedOn | momentFormat}}</span>
+      <div class="item-info">
+        <span>{{item.text}}</span>
+        <button (click)="deleteItem(item)">Remove</button>
+      </div>
+      <div class="item-meta-info">
+        <span class="added-on">{{item.addedOn | momentFormat}}</span>
+      </div>
     </li>
   </ul>
   <ng-template #noListItems>

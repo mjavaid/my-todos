@@ -1,10 +1,20 @@
 .todo-list {
   margin: 0;
   padding: 0;
+  list-style: none;
 
   li {
-    display: flex;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 10px;
+
+    .item-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .item-meta-info {
+      font-size: .7em;
+      color: dimgrey;
+    }
   }
 }
